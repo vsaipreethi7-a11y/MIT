@@ -11,7 +11,6 @@ import {
 import appCss from "../styles.css?url";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Chatbot } from "@/components/Chatbot";
 import logoUrl from "../assets/mit-logo.png";
 
@@ -99,7 +98,6 @@ function RootComponent() {
           <Outlet />
         </main>
         <SiteFooter />
-        <WhatsAppFab />
         <Chatbot />
       </div>
     </QueryClientProvider>
