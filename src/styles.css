@@ -1,0 +1,211 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+  --color-navy: var(--navy);
+  --color-navy-light: var(--navy-light);
+  --color-leaf: var(--leaf);
+  --color-cream: var(--cream);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Brand palette — matched to MIT logo */
+    --navy: oklch(0.235 0.075 264);
+    --navy-light: oklch(0.32 0.08 264);
+    --gold: oklch(0.74 0.135 78);
+    --gold-light: oklch(0.84 0.11 86);
+    --gold-dark: oklch(0.6 0.13 70);
+    --leaf: oklch(0.62 0.16 145);
+    --cream: oklch(0.985 0.01 90);
+
+    --background: oklch(1 0 0);
+    --foreground: var(--navy);
+    --card: oklch(1 0 0);
+    --card-foreground: var(--navy);
+    --popover: oklch(1 0 0);
+    --popover-foreground: var(--navy);
+
+    --primary: var(--navy);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: var(--cream);
+    --secondary-foreground: var(--navy);
+    --muted: oklch(0.97 0.005 90);
+    --muted-foreground: oklch(0.45 0.02 264);
+    --accent: var(--gold);
+    --accent-foreground: var(--navy);
+    --destructive: oklch(0.577 0.245 27.325);
+    --destructive-foreground: oklch(0.984 0 0);
+    --border: oklch(0.92 0.01 90);
+    --input: oklch(0.92 0.01 90);
+    --ring: var(--gold);
+
+    --font-display: "Cormorant Garamond", "Cinzel", Georgia, serif;
+    --font-body: "Manrope", "Poppins", system-ui, sans-serif;
+
+    --gradient-gold: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+    --gradient-navy: linear-gradient(135deg, var(--navy), var(--navy-light));
+    --gradient-hero: linear-gradient(135deg, oklch(0.985 0.01 90) 0%, oklch(1 0 0) 60%, oklch(0.95 0.04 86 / 0.4) 100%);
+    --shadow-gold: 0 12px 40px -12px color-mix(in oklab, var(--gold) 50%, transparent);
+    --shadow-navy: 0 18px 50px -18px color-mix(in oklab, var(--navy) 35%, transparent);
+    --shadow-soft: 0 8px 30px -10px oklch(0.2 0.05 264 / 0.12);
+    --shadow-glass: 0 8px 32px 0 oklch(0.2 0.05 264 / 0.08);
+
+    --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  .btn-gold {
+    background: var(--gradient-gold);
+    color: var(--navy);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 0.85rem 2rem;
+    border-radius: 999px;
+    transition: all 0.4s var(--transition-smooth);
+    box-shadow: var(--shadow-gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .btn-gold:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 20px 50px -10px color-mix(in oklab, var(--gold) 65%, transparent);
+  }
+
+  .btn-navy {
+    background: var(--gradient-navy);
+    color: var(--cream);
+    font-weight: 500;
+    padding: 0.85rem 2rem;
+    border-radius: 999px;
+    transition: all 0.4s var(--transition-smooth);
+    box-shadow: var(--shadow-navy);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .btn-navy:hover { transform: translateY(-2px); }
+
+  .btn-outline-gold {
+    border: 1.5px solid var(--gold);
+    color: var(--navy);
+    padding: 0.8rem 1.9rem;
+    border-radius: 999px;
+    transition: all 0.3s var(--transition-smooth);
+    background: transparent;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+  }
+  .btn-outline-gold:hover {
+    background: var(--gradient-gold);
+    color: var(--navy);
+    box-shadow: var(--shadow-gold);
+  }
+
+  .glass {
+    background: oklch(1 0 0 / 0.7);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border: 1px solid oklch(1 0 0 / 0.6);
+    box-shadow: var(--shadow-glass);
+  }
+
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .product-card {
+    background: var(--card);
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: all 0.5s var(--transition-smooth);
+  }
+  .product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-navy);
+    border-color: color-mix(in oklab, var(--gold) 60%, transparent);
+  }
+
+  .gold-divider {
+    height: 2px;
+    width: 80px;
+    background: var(--gradient-gold);
+    border-radius: 999px;
+  }
+
+  .reveal {
+    animation: reveal 0.9s var(--transition-smooth) both;
+  }
+  @keyframes reveal {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .float-slow { animation: floatY 6s ease-in-out infinite; }
+  @keyframes floatY {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+}
