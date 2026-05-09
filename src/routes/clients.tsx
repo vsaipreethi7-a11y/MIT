@@ -4,12 +4,6 @@ import { motion, AnimatePresence, useInView, animate } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 
 export const Route = createFileRoute("/clients")({
-  head: () => ({
-    meta: [
-      { title: "Clients — Mars International Trading Company" },
-      { name: "description", content: "Trusted by importers and distributors across Asia, the Middle East, Europe, the Americas and Africa." },
-    ],
-  }),
   component: Clients,
 });
 

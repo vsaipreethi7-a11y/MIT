@@ -3,12 +3,6 @@ import { Award, BadgeCheck, ShieldCheck, Stamp } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 
 export const Route = createFileRoute("/certificates")({
-  head: () => ({
-    meta: [
-      { title: "Certificates — Mars International Trading Company" },
-      { name: "description", content: "Internationally recognised quality, safety and export certifications backing every Mars International shipment." },
-    ],
-  }),
   component: Certificates,
 });
 

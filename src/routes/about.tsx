@@ -4,12 +4,6 @@ import { SectionHeading } from "@/components/SectionHeading";
 import about from "@/assets/about.jpg";
 
 export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About Us — Mars International Trading Company" },
-      { name: "description", content: "Mars International is a trusted Indian export house specialising in spices, herbal powders, agricultural and industrial commodities." },
-    ],
-  }),
   component: About,
 });
 

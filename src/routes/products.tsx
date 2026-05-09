@@ -5,12 +5,6 @@ import { PRODUCTS } from "@/data/products";
 import { SectionHeading } from "@/components/SectionHeading";
 
 export const Route = createFileRoute("/products")({
-  head: () => ({
-    meta: [
-      { title: "Products — Mars International Trading Company" },
-      { name: "description", content: "Explore our full range of premium Indian spices, herbal powders, banana leaf, bamboo salt, spirulina and granite for global export." },
-    ],
-  }),
   component: Products,
 });
 

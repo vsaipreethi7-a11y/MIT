@@ -4,12 +4,6 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { motion } from "framer-motion";
 
 export const Route = createFileRoute("/services")({
-  head: () => ({
-    meta: [
-      { title: "Services — Mars International Trading Company" },
-      { name: "description", content: "End-to-end export services: sourcing, quality control, custom packaging, logistics, documentation and global distribution." },
-    ],
-  }),
   component: Services,
 });
 

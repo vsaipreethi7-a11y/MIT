@@ -4,12 +4,6 @@ import logo from "@/assets/mit-logo.png";
 import { SectionHeading } from "@/components/SectionHeading";
 
 export const Route = createFileRoute("/brand")({
-  head: () => ({
-    meta: [
-      { title: "Our Brand & Values — Mars International Trading Company" },
-      { name: "description", content: "The MIT brand: rooted in Indian heritage, refined for global trade — symbolising trust, quality and global reach." },
-    ],
-  }),
   component: Brand,
 });
 

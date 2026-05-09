@@ -3,12 +3,6 @@ import exportsImg from "@/assets/exports.jpg";
 import { SectionHeading } from "@/components/SectionHeading";
 
 export const Route = createFileRoute("/exports")({
-  head: () => ({
-    meta: [
-      { title: "Global Exports — Mars International Trading Company" },
-      { name: "description", content: "Reliable global exports of premium Indian spices, herbal and natural products to Asia, the Middle East, Europe and beyond." },
-    ],
-  }),
   component: Exports,
 });
 

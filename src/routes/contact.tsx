@@ -4,12 +4,6 @@ import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — Mars International Trading Company" },
-      { name: "description", content: "Get in touch with Mars International Trading Company for quotes, samples and partnership inquiries." },
-    ],
-  }),
   component: Contact,
 });
 

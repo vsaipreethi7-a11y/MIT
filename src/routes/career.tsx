@@ -3,12 +3,6 @@ import { Briefcase, Mail } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 
 export const Route = createFileRoute("/career")({
-  head: () => ({
-    meta: [
-      { title: "Career — Mars International Trading Company" },
-      { name: "description", content: "Join Mars International — opportunities in export operations, quality assurance, sales and supply chain." },
-    ],
-  }),
   component: Career,
 });
 

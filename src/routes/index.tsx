@@ -7,12 +7,6 @@ import { PRODUCTS } from "@/data/products";
 import { SectionHeading } from "@/components/SectionHeading";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Mars International Trading Company — Premium Indian Exports" },
-      { name: "description", content: "Trusted Indian exporter of premium spices, herbal powders, banana leaf, bamboo salt, spirulina and granite to Asia, Middle East, Europe and beyond." },
-    ],
-  }),
   component: Home,
 });
 
